@@ -31,9 +31,9 @@ class CuisineAdapter (val context: Context, val list: List<Cuisine>, val listene
         holder.textView_cuisine.setText(item.cuisineName)
 
 
-//        holder.service_container.setOnClickListener {
-//            listener.onClicked(item)
-//        }
+        holder.cuisine_container.setOnClickListener {
+            listener.onClicked(item)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -44,9 +44,11 @@ class CuisineAdapter (val context: Context, val list: List<Cuisine>, val listene
 class CuisineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var imageView_cuisine: ImageView
     var textView_cuisine: TextView
+    var cuisine_container: CardView
 
     init {
         imageView_cuisine = itemView.findViewById(R.id.imageView_cuisine)
         textView_cuisine = itemView.findViewById(R.id.textView_cuisine)
+        cuisine_container = itemView.findViewById(R.id.cuisine_container)
     }
 }

@@ -1,4 +1,5 @@
 package com.evanemran.quickfoods
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -112,7 +113,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private val cuisineClickListener: ClickListener<Cuisine> = object : ClickListener<Cuisine>{
         override fun onClicked(data: Cuisine) {
-            Toast.makeText(this@MainActivity, "Clicked!", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this@MainActivity, RestaurantsActivity::class.java))
         }
 
     }

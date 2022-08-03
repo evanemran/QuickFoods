@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_cart.xml" value="0.155" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_delivery.xml" value="0.155" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_love.xml" value="0.155" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_star.xml" value="0.155" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_restaurants.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_signup.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/home_grids.xml" value="0.16893115942028986" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/layout_search.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/list_cuisine.xml" value="0.2" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/list_deals.xml" value="0.16893115942028986" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/list_restaurants.xml" value="0.14" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/list_services.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/list_services_large.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/nav_header.xml" value="0.16893115942028986" />

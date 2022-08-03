@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="grey">#CCC7C7</color>
+    <color name="dark_grey">#242B2E</color>
 
     <color name="accentColor">#4CAF50</color>
 </resources>
