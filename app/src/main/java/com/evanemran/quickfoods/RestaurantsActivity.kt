@@ -1,5 +1,6 @@
 package com.evanemran.quickfoods
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -33,6 +34,7 @@ class RestaurantsActivity : AppCompatActivity() {
         restaurants.add(Restaurant("Lol Cafe"))
 
         recycler_restaurants.setHasFixedSize(true)
+        recycler_restaurants.isNestedScrollingEnabled = false
         recycler_restaurants.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         val restaurantAdapter = RestaurantAdapter(this, restaurants, restaurantClickListener)
         recycler_restaurants.adapter = restaurantAdapter
@@ -40,7 +42,7 @@ class RestaurantsActivity : AppCompatActivity() {
 
     private val restaurantClickListener: ClickListener<Restaurant> = object : ClickListener<Restaurant> {
         override fun onClicked(data: Restaurant) {
-            Toast.makeText(this@RestaurantsActivity, "Clicked!", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this@RestaurantsActivity, RestaurantDetailActivity::class.java))
         }
 
     }

@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         cuisines.add(Cuisine(6, R.drawable.cuisine, "American"))
 
         recycler_cuisine.setHasFixedSize(true)
+        recycler_cuisine.isNestedScrollingEnabled = false
         recycler_cuisine.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.HORIZONTAL)
         val cuisineAdapter = CuisineAdapter(this, cuisines, cuisineClickListener)
         recycler_cuisine.adapter = cuisineAdapter
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         deals.add(Deals(6, R.drawable.deals))
 
         recycler_deals.setHasFixedSize(true)
+        recycler_deals.isNestedScrollingEnabled = false
         recycler_deals.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val dealsAdapter = DealsAdapter(this, deals, dealsClickListener)
         recycler_deals.adapter = dealsAdapter
@@ -88,6 +90,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         services.add(Service.PICKUP)
 
         recycler_service.setHasFixedSize(true)
+        recycler_service.isNestedScrollingEnabled = false
         recycler_service.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         val serviceAdapter = ServiceAdapter(this, services, servicesClickListener)
         recycler_service.adapter = serviceAdapter

@@ -31,9 +31,9 @@ class RestaurantAdapter (val context: Context, val list: List<Restaurant>, val l
         holder.textView_restaurantName.setText(item.restaurantName)
 
 
-//        holder.service_container.setOnClickListener {
-//            listener.onClicked(item)
-//        }
+        holder.restaurant_container.setOnClickListener {
+            listener.onClicked(item)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -43,8 +43,10 @@ class RestaurantAdapter (val context: Context, val list: List<Restaurant>, val l
 
 class RestaurantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var textView_restaurantName: TextView
+    var restaurant_container: CardView
 
     init {
         textView_restaurantName = itemView.findViewById(R.id.textView_restaurantName)
+        restaurant_container = itemView.findViewById(R.id.restaurant_container)
     }
 }
