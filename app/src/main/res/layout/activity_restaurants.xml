@@ -29,17 +29,18 @@
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/textView_resultCount"
-                android:text="139 Restaurants"
-                android:textSize="18sp"
-                android:textStyle="normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:paddingStart="16dp"
                 android:layout_marginBottom="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:paddingStart="16dp"
+                android:text="139 Restaurants"
+                android:textSize="16sp"
+                android:textStyle="normal" />
         </RelativeLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_restaurants"

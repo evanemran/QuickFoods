@@ -16,6 +16,9 @@
         android:theme="@style/Theme.QuickFoods"
         tools:targetApi="31">
         <activity
+            android:name=".FoodDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".RestaurantDetailActivity"
             android:exported="false" />
         <activity

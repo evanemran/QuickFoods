@@ -33,9 +33,9 @@ class FoodListAdapter (val context: Context, val list: List<Foods>, val listener
         holder.textView_foodInfo.setText(item.foodInfo)
 
 
-//        holder.cuisine_container.setOnClickListener {
-//            listener.onClicked(item)
-//        }
+        holder.foodList_container.setOnClickListener {
+            listener.onClicked(item)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -48,11 +48,13 @@ class FoodListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var textView_foodName: TextView
     var textView_foodInfo: TextView
     var textView_foodPrice: TextView
+    var foodList_container: CardView
 
     init {
         imageView_foods = itemView.findViewById(R.id.imageView_foods)
         textView_foodName = itemView.findViewById(R.id.textView_foodName)
         textView_foodInfo = itemView.findViewById(R.id.textView_foodInfo)
         textView_foodPrice = itemView.findViewById(R.id.textView_foodPrice)
+        foodList_container = itemView.findViewById(R.id.foodList_container)
     }
 }

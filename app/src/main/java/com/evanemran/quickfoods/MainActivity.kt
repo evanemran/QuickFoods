@@ -2,6 +2,7 @@ package com.evanemran.quickfoods
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,10 +13,12 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.evanemran.quickfoods.adapters.CuisineAdapter
 import com.evanemran.quickfoods.adapters.DealsAdapter
+import com.evanemran.quickfoods.adapters.DrawerAdapter
 import com.evanemran.quickfoods.adapters.ServiceAdapter
 import com.evanemran.quickfoods.listeners.ClickListener
 import com.evanemran.quickfoods.models.Cuisine
 import com.evanemran.quickfoods.models.Deals
+import com.evanemran.quickfoods.models.DrawerMenu
 import com.evanemran.quickfoods.models.Service
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -41,12 +44,32 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setupServices()
         setupDeals()
         setupCuisine()
+        setupNavMenu()
 
+    }
+
+    private fun setupNavMenu() {
+        val navMenus: MutableList<DrawerMenu> = mutableListOf()
+        navMenus.add(DrawerMenu.FAVORITES)
+        navMenus.add(DrawerMenu.ORDER_REORDER)
+        navMenus.add(DrawerMenu.PROFILE)
+        navMenus.add(DrawerMenu.ADDRESS)
+        navMenus.add(DrawerMenu.REWARDS)
+        navMenus.add(DrawerMenu.VOUCHERS)
+        navMenus.add(DrawerMenu.HELP_CENTER)
+        navMenus.add(DrawerMenu.SETTINGS)
+        navMenus.add(DrawerMenu.TERMS)
+        navMenus.add(DrawerMenu.LOGOUT)
+
+        recycler_nav.setHasFixedSize(true)
+        recycler_nav.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        val drawerAdapter = DrawerAdapter(this, navMenus, drawerClickListener)
+        recycler_nav.adapter = drawerAdapter
     }
 
     private fun setupCuisine() {
         val cuisines: MutableList<Cuisine> = mutableListOf()
-        cuisines.add(Cuisine(0, R.drawable.cuisine, "Fastfood"))
+        cuisines.add(Cuisine(0, R.drawable.cuisine, "Fast food"))
         cuisines.add(Cuisine(1, R.drawable.cuisine, "Dessert"))
         cuisines.add(Cuisine(2, R.drawable.cuisine, "Asian"))
         cuisines.add(Cuisine(3, R.drawable.cuisine, "Bangladeshi"))
@@ -116,6 +139,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private val cuisineClickListener: ClickListener<Cuisine> = object : ClickListener<Cuisine>{
         override fun onClicked(data: Cuisine) {
+            startActivity(Intent(this@MainActivity, RestaurantsActivity::class.java))
+        }
+
+    }
+
+    private val drawerClickListener: ClickListener<DrawerMenu> = object : ClickListener<DrawerMenu>{
+        override fun onClicked(data: DrawerMenu) {
             startActivity(Intent(this@MainActivity, RestaurantsActivity::class.java))
         }
 
