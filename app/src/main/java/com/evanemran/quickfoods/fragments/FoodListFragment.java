@@ -30,6 +30,7 @@ public class FoodListFragment extends Fragment {
         RecyclerView recycler_foods = view.findViewById(R.id.recycler_foods);
 
         recycler_foods.setHasFixedSize(true);
+        recycler_foods.setNestedScrollingEnabled(true);
         recycler_foods.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         FoodListAdapter foodListAdapter = new FoodListAdapter(getContext(), getFoodList(), foodClickListener);
         recycler_foods.setAdapter(foodListAdapter);
@@ -39,6 +40,10 @@ public class FoodListFragment extends Fragment {
 
     private List<Foods> getFoodList() {
         List<Foods> foodsList = new ArrayList<>();
+        foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
+        foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
+        foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
+        foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
         foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
         foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
         foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));

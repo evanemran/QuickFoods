@@ -8,11 +8,9 @@ import com.evanemran.quickfoods.fragments.FoodListFragment
 import com.evanemran.quickfoods.models.Foods
 import com.evanemran.quickfoods.models.Restaurant
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_restaurant_detail.*
 
 class RestaurantDetailActivity : AppCompatActivity() {
-    private val tabLayout: TabLayout? = null
-    private val viewPager: ViewPager? = null
-    private var viewPagerAdapter: FoodsViewPagerAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_detail)
@@ -36,22 +34,8 @@ class RestaurantDetailActivity : AppCompatActivity() {
 //        tabLayout!!.setupWithViewPager(viewPager)
     }
 
-    private fun getFoodList() {
-        val foods: MutableList<Foods> = mutableListOf()
-        foods.add(Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal))
-        foods.add(Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal))
-        foods.add(Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal))
-        foods.add(Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal))
-        foods.add(Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal))
-        foods.add(Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal))
-        foods.add(Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal))
-        foods.add(Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal))
-
-
-    }
-
     private fun setupViewPager(viewPager: ViewPager, list: List<String>) {
-        viewPagerAdapter = FoodsViewPagerAdapter(supportFragmentManager)
+        val viewPagerAdapter = FoodsViewPagerAdapter(supportFragmentManager)
 
 
         for (item in list){
