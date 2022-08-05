@@ -25,13 +25,13 @@ class RestaurantsActivity : AppCompatActivity() {
 
     private fun setupRestaurants() {
         val restaurants: MutableList<Restaurant> = mutableListOf()
-        restaurants.add(Restaurant("ABC Restaurant"))
-        restaurants.add(Restaurant("Coding Cafe"))
-        restaurants.add(Restaurant("Evan's Dine"))
-        restaurants.add(Restaurant("Adda Buzz"))
-        restaurants.add(Restaurant("Iramon Cafe"))
-        restaurants.add(Restaurant("Food Chemistry"))
-        restaurants.add(Restaurant("Lol Cafe"))
+        restaurants.add(Restaurant("ABC Restaurant", R.drawable.restaurants))
+        restaurants.add(Restaurant("Coding Cafe", R.drawable.restaurants))
+        restaurants.add(Restaurant("Evan's Dine", R.drawable.restaurants))
+        restaurants.add(Restaurant("Adda Buzz", R.drawable.restaurants))
+        restaurants.add(Restaurant("Iramon Cafe", R.drawable.restaurants))
+        restaurants.add(Restaurant("Food Chemistry", R.drawable.restaurants))
+        restaurants.add(Restaurant("Lol Cafe", R.drawable.restaurants))
 
         recycler_restaurants.setHasFixedSize(true)
         recycler_restaurants.isNestedScrollingEnabled = false

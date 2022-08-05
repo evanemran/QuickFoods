@@ -11,15 +11,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.evanemran.quickfoods.adapters.CuisineAdapter
-import com.evanemran.quickfoods.adapters.DealsAdapter
-import com.evanemran.quickfoods.adapters.DrawerAdapter
-import com.evanemran.quickfoods.adapters.ServiceAdapter
+import com.evanemran.quickfoods.adapters.*
 import com.evanemran.quickfoods.listeners.ClickListener
-import com.evanemran.quickfoods.models.Cuisine
-import com.evanemran.quickfoods.models.Deals
-import com.evanemran.quickfoods.models.DrawerMenu
-import com.evanemran.quickfoods.models.Service
+import com.evanemran.quickfoods.models.*
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.home_grids.*
@@ -42,6 +36,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
 
         setupServices()
+        setupRecents()
         setupDeals()
         setupCuisine()
         setupNavMenu()
@@ -50,6 +45,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(Intent(this@MainActivity, CartActivity::class.java))
         }
 
+    }
+
+    private fun setupRecents() {
+        val recents: MutableList<Restaurant> = mutableListOf()
+        recents.add(Restaurant("Iramon Cafe", R.drawable.restaurants))
+        recents.add(Restaurant("Food Chemistry", R.drawable.restaurants))
+        recents.add(Restaurant("Coding Cafe", R.drawable.restaurants))
+        recents.add(Restaurant("Evan's Din", R.drawable.restaurants))
+
+        recycler_recents.setHasFixedSize(true)
+        recycler_recents.isNestedScrollingEnabled = false
+        recycler_recents.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
+        val recentsAdapter = RecentsAdapter(this, recents, restaurantClickListener)
+        recycler_recents.adapter = recentsAdapter
     }
 
     private fun setupNavMenu() {
@@ -141,6 +150,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
+    private val restaurantClickListener: ClickListener<Restaurant> = object : ClickListener<Restaurant> {
+        override fun onClicked(data: Restaurant) {
+            startActivity(Intent(this@MainActivity, RestaurantDetailActivity::class.java))
+        }
+
+    }
+
     private val cuisineClickListener: ClickListener<Cuisine> = object : ClickListener<Cuisine>{
         override fun onClicked(data: Cuisine) {
             startActivity(Intent(this@MainActivity, RestaurantsActivity::class.java))
@@ -150,7 +166,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private val drawerClickListener: ClickListener<DrawerMenu> = object : ClickListener<DrawerMenu>{
         override fun onClicked(data: DrawerMenu) {
-            startActivity(Intent(this@MainActivity, RestaurantsActivity::class.java))
+            Toast.makeText(this@MainActivity, "Clicked " + data.title, Toast.LENGTH_SHORT).show()
         }
 
     }
