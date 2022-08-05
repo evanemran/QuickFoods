@@ -46,6 +46,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setupCuisine()
         setupNavMenu()
 
+        imageButton_cart.setOnClickListener {
+            startActivity(Intent(this@MainActivity, CartActivity::class.java))
+        }
+
     }
 
     private fun setupNavMenu() {

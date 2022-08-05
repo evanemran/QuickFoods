@@ -16,9 +16,11 @@ class FoodDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_detail)
-
-
         setAddons()
+
+        button_addToCart.setOnClickListener {
+            this.finish()
+        }
     }
 
     private fun setAddons() {

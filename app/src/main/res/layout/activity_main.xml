@@ -53,16 +53,17 @@
                         android:layout_height="wrap_content"
                         android:text="50, Bay Tower"/>
                 </LinearLayout>
+
                 <ImageButton
                     android:id="@+id/imageButton_cart"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_cart"
-                    android:background="@android:color/transparent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="16dp"
                     android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="16dp"
+                    android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:layout_height="20dp"/>
+                    android:src="@drawable/ic_cart" />
                 <ImageButton
                     android:id="@+id/imageButton_love"
                     android:layout_centerInParent="true"
