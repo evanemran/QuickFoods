@@ -29,7 +29,7 @@ class SummaryAdapter (val context: Context, val list: List<Foods>)
         val item = list[holder.adapterPosition]
 
         holder.textView_foodName.setText(item.foodName)
-        holder.textView_foodPrice.setText(item.foodPrice.toString() + " Tk")
+        holder.textView_foodPrice.setText("Tk. " + item.foodPrice.toString())
 
     }
 

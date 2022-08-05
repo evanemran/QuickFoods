@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Title"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:padding="8dp"
@@ -36,18 +36,18 @@
                 android:layout_height="wrap_content"
                 android:text="Subtitle"
                 android:maxLines="3"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:padding="8dp"
+                android:paddingStart="8dp"
                 android:textStyle="normal"/>
             <ImageView
                 android:id="@+id/imageView_service"
                 android:padding="8dp"
                 android:src="@drawable/food_delivery"
                 android:scaleType="fitCenter"
-                android:layout_width="80dp"
-                android:layout_height="80dp"/>
+                android:layout_width="60dp"
+                android:layout_height="60dp"/>
         </LinearLayout>
         <LinearLayout
             android:visibility="gone"

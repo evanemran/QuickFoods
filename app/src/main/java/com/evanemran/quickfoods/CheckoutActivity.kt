@@ -13,8 +13,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.evanemran.quickfoods.adapters.RecentsAdapter
 import com.evanemran.quickfoods.adapters.SummaryAdapter
+import com.evanemran.quickfoods.dialogs.PaymentOptionDialog
+import com.evanemran.quickfoods.listeners.ClickListener
+import com.evanemran.quickfoods.models.Deals
 import com.evanemran.quickfoods.models.Foods
+import com.evanemran.quickfoods.models.PaymentChannels
+import com.evanemran.quickfoods.models.Restaurant
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -24,6 +31,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.gms.tasks.OnSuccessListener
 import kotlinx.android.synthetic.main.activity_checkout.*
+import kotlinx.android.synthetic.main.home_grids.*
 
 class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
     var map: GoogleMap? = null
@@ -37,10 +45,33 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
         setupCheckoutData()
         requestPermission()
 
+        textView_payChannel.setOnClickListener {
+            val postDialog = PaymentOptionDialog(getPayChannelList() ,paymentClickListener)
+            postDialog.show(supportFragmentManager, "payment")
+        }
+
         client = LocationServices.getFusedLocationProviderClient(this)
 
         val mapFragment: SupportMapFragment = mini_map as SupportMapFragment
         mapFragment.getMapAsync(this)
+    }
+
+    private fun getPayChannelList(): MutableList<PaymentChannels> {
+        val payChannels: MutableList<PaymentChannels> = mutableListOf()
+        payChannels.add(PaymentChannels(0, "Cash", R.drawable.ic_money))
+        payChannels.add(PaymentChannels(0, "Card", R.drawable.ic_visa_logo))
+        payChannels.add(PaymentChannels(0, "bKash", R.drawable.ic_bkash_logo))
+        payChannels.add(PaymentChannels(0, "Nagad", R.drawable.ic_nagad_logo))
+        payChannels.add(PaymentChannels(0, "Upay", R.drawable.ic_upay_logo))
+
+        return payChannels
+    }
+
+    private val paymentClickListener: ClickListener<PaymentChannels> = object : ClickListener<PaymentChannels> {
+        override fun onClicked(data: PaymentChannels) {
+            Toast.makeText(this@CheckoutActivity, "Selected " + data.pName, Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     private fun setupCheckoutData() {
@@ -107,7 +138,7 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
                             }
                             googleMap.isMyLocationEnabled = false
                             val latLng = LatLng(location.latitude, location.longitude)
-                            map!!.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+                            map!!.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16f))
                             val markerOptions = MarkerOptions()
                                 markerOptions.position(latLng)
                                 markerOptions.icon(

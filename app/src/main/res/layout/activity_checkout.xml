@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".CheckoutActivity">
     <androidx.appcompat.widget.Toolbar
@@ -91,6 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/textView_payChannel"
                         android:text="Payment method"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -248,7 +250,7 @@
                 android:layout_weight="1"/>
         </LinearLayout>
         <Button
-            android:id="@+id/button_reviewAddress"
+            android:id="@+id/button_checkOut"
             android:layout_margin="16dp"
             android:text="Place order"
             android:textAllCaps="false"

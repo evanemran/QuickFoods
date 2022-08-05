@@ -49,13 +49,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun setupRecents() {
         val recents: MutableList<Restaurant> = mutableListOf()
-        recents.add(Restaurant("Iramon Cafe", R.drawable.restaurants))
-        recents.add(Restaurant("Food Chemistry", R.drawable.restaurants))
+        recents.add(Restaurant("Iramon Cafe", R.drawable.iramon))
+        recents.add(Restaurant("Food Chemistry", R.drawable.chemistry))
         recents.add(Restaurant("Coding Cafe", R.drawable.restaurants))
-        recents.add(Restaurant("Evan's Din", R.drawable.restaurants))
+        recents.add(Restaurant("Evan's Dine", R.drawable.kacchi))
 
         recycler_recents.setHasFixedSize(true)
-        recycler_recents.isNestedScrollingEnabled = false
+        recycler_recents.isNestedScrollingEnabled = true
         recycler_recents.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
         val recentsAdapter = RecentsAdapter(this, recents, restaurantClickListener)
         recycler_recents.adapter = recentsAdapter
@@ -83,15 +83,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun setupCuisine() {
         val cuisines: MutableList<Cuisine> = mutableListOf()
         cuisines.add(Cuisine(0, R.drawable.cuisine, "Fast food"))
-        cuisines.add(Cuisine(1, R.drawable.cuisine, "Dessert"))
-        cuisines.add(Cuisine(2, R.drawable.cuisine, "Asian"))
-        cuisines.add(Cuisine(3, R.drawable.cuisine, "Bangladeshi"))
-        cuisines.add(Cuisine(4, R.drawable.cuisine, "Italian"))
-        cuisines.add(Cuisine(5, R.drawable.cuisine, "Chinese"))
-        cuisines.add(Cuisine(6, R.drawable.cuisine, "Indian"))
-        cuisines.add(Cuisine(6, R.drawable.cuisine, "Japanese"))
-        cuisines.add(Cuisine(6, R.drawable.cuisine, "Beverage"))
-        cuisines.add(Cuisine(6, R.drawable.cuisine, "American"))
+        cuisines.add(Cuisine(1, R.drawable.cuisine_dessert, "Dessert"))
+        cuisines.add(Cuisine(2, R.drawable.cuisine_asian, "Asian"))
+        cuisines.add(Cuisine(3, R.drawable.cuisine_bangladeshi, "Bangladeshi"))
+        cuisines.add(Cuisine(4, R.drawable.cuisine_italian, "Italian"))
+        cuisines.add(Cuisine(5, R.drawable.cuisine_chinese, "Chinese"))
+        cuisines.add(Cuisine(6, R.drawable.cuisine_indian, "Indian"))
+        cuisines.add(Cuisine(6, R.drawable.cuisine_japanese, "Japanese"))
+        cuisines.add(Cuisine(6, R.drawable.cuisine_beverages, "Beverage"))
+        cuisines.add(Cuisine(6, R.drawable.cuisine_american, "American"))
 
         recycler_cuisine.setHasFixedSize(true)
         recycler_cuisine.isNestedScrollingEnabled = false

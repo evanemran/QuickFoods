@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:id="@+id/drawer_container"
+    android:background="@color/white"
     android:gravity="center_vertical"
     android:layout_margin="16dp">
     <ImageView

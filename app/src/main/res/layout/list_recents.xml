@@ -90,7 +90,7 @@
             <TextView
                 android:id="@+id/textView_restaurantCuisine"
                 android:layout_below="@+id/textView_restaurantName"
-                android:text="Fast Food"
+                android:text="Fast Food, Desserts, Soft drinks, Appetizers, Chinese, Vegetarian"
                 android:textColor="@color/dark_grey"
                 android:paddingStart="8dp"
                 android:textStyle="bold"

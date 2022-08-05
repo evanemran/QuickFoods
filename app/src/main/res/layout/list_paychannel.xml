@@ -4,14 +4,15 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:background="@color/white"
+    android:gravity="center_vertical"
     android:orientation="horizontal">
-    <CheckBox
-        android:foregroundTint="@color/accentColor"
-        android:buttonTint="@color/accentColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <ImageView
+        android:src="@drawable/ic_visa_logo"
+        android:id="@+id/imageView_payChannel"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
     <TextView
-        android:id="@+id/textView_addonName"
+        android:id="@+id/textView_payChannel"
         android:text="Cheese"
         android:textStyle="normal"
         android:textSize="14sp"
@@ -20,13 +21,10 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/textView_addonPrice"
-        android:text=" + Tk 30"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        android:padding="8dp"
+    <RadioButton
+        android:id="@+id/radioButton_payChannel"
+        android:foregroundTint="@color/accentColor"
+        android:buttonTint="@color/accentColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </LinearLayout>

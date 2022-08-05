@@ -5,9 +5,12 @@
       <map>
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/button_rounded.xml" value="0.1655" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/ic_address.xml" value="0.1655" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/ic_bkash_logo.xml" value="0.1655" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/ic_location_marker.xml" value="0.1655" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/ic_nagad_logo.xml" value="0.1655" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/ic_order.xml" value="0.1655" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/ic_rewards.xml" value="0.1655" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/ic_visa_logo.xml" value="0.1655" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_cart.xml" value="0.25" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_checkout.xml" value="0.25" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_food_detail.xml" value="0.25" />
@@ -15,16 +18,21 @@
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_restaurant_detail.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_restaurants.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_signup.xml" value="0.30416666666666664" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/dialog_paymentchannel.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/fragment_food.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/home_grids.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/layout_search.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_addon.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_cart.xml" value="0.25" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_cuisine.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_deals.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_drawer.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_food.xml" value="0.30416666666666664" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_paychannel.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_recents.xml" value="0.25" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_restaurants.xml" value="0.30416666666666664" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_services.xml" value="0.30416666666666664" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_services_large.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/list_summary.xml" value="0.30416666666666664" />
         <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/nav_header.xml" value="0.30416666666666664" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_cart.xml" value="0.155" />
