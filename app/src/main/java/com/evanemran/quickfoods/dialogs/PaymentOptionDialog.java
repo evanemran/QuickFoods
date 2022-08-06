@@ -29,11 +29,13 @@ public class PaymentOptionDialog extends DialogFragment {
     RecyclerView recycler_payChannel;
     ImageView imageView_close;
     List<PaymentChannels> pList;
+    PaymentChannels selectedChannel;
 
 
-    public PaymentOptionDialog(List<PaymentChannels> list, ClickListener<PaymentChannels> listener) {
+    public PaymentOptionDialog(List<PaymentChannels> list, PaymentChannels selectedChannel, ClickListener<PaymentChannels> listener) {
         this.pList = list;
         this.listener = listener;
+        this.selectedChannel = selectedChannel;
     }
 
     @Override
@@ -56,7 +58,7 @@ public class PaymentOptionDialog extends DialogFragment {
 
         recycler_payChannel.setHasFixedSize(true);
         recycler_payChannel.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        PayChannelAdapter adapter = new PayChannelAdapter(getContext(), pList, pClickListener);
+        PayChannelAdapter adapter = new PayChannelAdapter(getContext(), selectedChannel, pList, pClickListener);
         recycler_payChannel.setAdapter(adapter);
 
         imageView_close.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +91,9 @@ public class PaymentOptionDialog extends DialogFragment {
     private final ClickListener<PaymentChannels> pClickListener = new ClickListener<PaymentChannels>() {
         @Override
         public void onClicked(PaymentChannels data) {
-
+            selectedChannel = data;
+            listener.onClicked(data);
+            dismiss();
         }
     };
 
@@ -106,6 +110,7 @@ public class PaymentOptionDialog extends DialogFragment {
             int width = ViewGroup.LayoutParams.MATCH_PARENT;
             int height = ViewGroup.LayoutParams.WRAP_CONTENT;
             d.getWindow().setLayout(width, height);
+            d.setCanceledOnTouchOutside(false);
         }
     }
 

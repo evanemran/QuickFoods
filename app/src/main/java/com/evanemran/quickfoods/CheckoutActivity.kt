@@ -38,6 +38,7 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
     var mapFragment: SupportMapFragment? = null
     private var client: FusedLocationProviderClient? = null
     private val MyMarker: Marker? = null
+    private var selectedChannel: PaymentChannels? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
@@ -45,8 +46,10 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
         setupCheckoutData()
         requestPermission()
 
+        selectedChannel = PaymentChannels(0, "Cash", R.drawable.ic_money)
+
         textView_payChannel.setOnClickListener {
-            val postDialog = PaymentOptionDialog(getPayChannelList() ,paymentClickListener)
+            val postDialog = PaymentOptionDialog(getPayChannelList(), selectedChannel ,paymentClickListener)
             postDialog.show(supportFragmentManager, "payment")
         }
 
@@ -63,12 +66,16 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
         payChannels.add(PaymentChannels(0, "bKash", R.drawable.ic_bkash_logo))
         payChannels.add(PaymentChannels(0, "Nagad", R.drawable.ic_nagad_logo))
         payChannels.add(PaymentChannels(0, "Upay", R.drawable.ic_upay_logo))
+        payChannels.add(PaymentChannels(0, "Rocket", R.drawable.ic__rocket))
 
         return payChannels
     }
 
     private val paymentClickListener: ClickListener<PaymentChannels> = object : ClickListener<PaymentChannels> {
         override fun onClicked(data: PaymentChannels) {
+            selectedChannel = data
+            imageView_selectedPayChannel.setImageResource(data.pIcon)
+            textView_paymentType.text = data.pName
             Toast.makeText(this@CheckoutActivity, "Selected " + data.pName, Toast.LENGTH_SHORT).show()
         }
 

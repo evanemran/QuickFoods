@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:background="@color/white"
+    android:id="@+id/payChannel_container"
     android:gravity="center_vertical"
     android:orientation="horizontal">
     <ImageView
@@ -13,7 +15,7 @@
         android:layout_height="30dp"/>
     <TextView
         android:id="@+id/textView_payChannel"
-        android:text="Cheese"
+        android:text="Cash"
         android:textStyle="normal"
         android:textSize="14sp"
         android:textColor="@color/black"
@@ -21,10 +23,12 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"/>
-    <RadioButton
-        android:id="@+id/radioButton_payChannel"
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/imageView_paySelected"
         android:foregroundTint="@color/accentColor"
-        android:buttonTint="@color/accentColor"
+        android:src="@drawable/ic_check"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:tint="@color/accentColor" />
 </LinearLayout>
