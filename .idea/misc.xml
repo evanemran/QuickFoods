@@ -7,6 +7,8 @@
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_delivery.xml" value="0.155" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_love.xml" value="0.155" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_star.xml" value="0.155" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_address_add.xml" value="0.16893115942028986" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_address_list.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_checkout.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_food_detail.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
@@ -15,6 +17,8 @@
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_restaurants.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/activity_signup.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/bottomsheet_food_detail.xml" value="0.16893115942028986" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/dialog_paymentchannel.xml" value="0.16893115942028986" />
+        <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/dialog_permission.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/fragment_food.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/home_grids.xml" value="0.16893115942028986" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/layout/layout_search.xml" value="0.16893115942028986" />

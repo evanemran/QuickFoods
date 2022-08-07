@@ -14,15 +14,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.evanemran.quickfoods.adapters.RecentsAdapter
 import com.evanemran.quickfoods.adapters.SummaryAdapter
 import com.evanemran.quickfoods.dialogs.PaymentOptionDialog
 import com.evanemran.quickfoods.listeners.ClickListener
-import com.evanemran.quickfoods.models.Deals
 import com.evanemran.quickfoods.models.Foods
 import com.evanemran.quickfoods.models.PaymentChannels
-import com.evanemran.quickfoods.models.Restaurant
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -40,6 +36,7 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
     private var client: FusedLocationProviderClient? = null
     private val MyMarker: Marker? = null
     private var selectedChannel: PaymentChannels? = null
+    var isAddressAvailable = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
@@ -48,6 +45,17 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
         requestPermission()
 
         selectedChannel = PaymentChannels(0, "Cash", R.drawable.ic_money)
+
+        textView_deliveryAddress.setOnClickListener {
+            if (isAddressAvailable){
+                val listIntent = Intent(this, AddressListActivity::class.java)
+                startActivityForResult(listIntent, 101)
+            }
+            else{
+                val listIntent = Intent(this, AddressAddActivity::class.java)
+                startActivityForResult(listIntent, 102)
+            }
+        }
 
         textView_payChannel.setOnClickListener {
             val postDialog = PaymentOptionDialog(getPayChannelList(), selectedChannel ,paymentClickListener)

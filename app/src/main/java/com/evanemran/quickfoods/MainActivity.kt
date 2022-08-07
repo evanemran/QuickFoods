@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.evanemran.quickfoods.adapters.*
+import com.evanemran.quickfoods.dialogs.PaymentOptionDialog
+import com.evanemran.quickfoods.dialogs.PermissionDialog
 import com.evanemran.quickfoods.listeners.ClickListener
 import com.evanemran.quickfoods.models.*
 import com.google.android.material.navigation.NavigationView
@@ -138,7 +140,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private val servicesClickListener: ClickListener<Service> = object : ClickListener<Service>{
         override fun onClicked(data: Service) {
-            Toast.makeText(this@MainActivity, data.title, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this@MainActivity, data.title, Toast.LENGTH_SHORT).show()
+            val permissionDialog = PermissionDialog(permissionListener)
+            permissionDialog.show(supportFragmentManager, "permission")
         }
 
     }
@@ -167,6 +171,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val drawerClickListener: ClickListener<DrawerMenu> = object : ClickListener<DrawerMenu>{
         override fun onClicked(data: DrawerMenu) {
             Toast.makeText(this@MainActivity, "Clicked " + data.title, Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    private val permissionListener: ClickListener<Boolean> = object : ClickListener<Boolean>{
+        override fun onClicked(data: Boolean) {
+//            Toast.makeText(this@MainActivity, "Clicked " + data.title, Toast.LENGTH_SHORT).show()
         }
 
     }
