@@ -1,4 +1,5 @@
 package com.evanemran.quickfoods
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -6,6 +7,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,6 +39,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
+        askPermission()
+
         setupServices()
         setupRecents()
         setupDeals()
@@ -47,6 +51,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(Intent(this@MainActivity, CartActivity::class.java))
         }
 
+    }
+
+    private fun askPermission() {
+        val permissionDialog = PermissionDialog(permissionListener)
+        permissionDialog.show(supportFragmentManager, "permission")
+
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
+            1
+        )
     }
 
     private fun setupRecents() {

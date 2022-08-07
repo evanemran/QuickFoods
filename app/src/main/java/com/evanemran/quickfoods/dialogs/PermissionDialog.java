@@ -53,25 +53,6 @@ public class PermissionDialog extends DialogFragment {
                 dismiss();
             }
         });
-
-
-        /*button_comment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String comment = editText_comment.getText().toString();
-                if (comment.isEmpty()){
-                    editText_comment.setError("Write something.");
-                }
-                else{
-                    CommentData commentData = new CommentData();
-                    commentData.setCommentBody(comment);
-                    commentData.setCommenter(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
-                    postData.getComments().add(commentData);
-                    listener.onPostClicked(postData, null);
-                    dismiss();
-                }
-            }
-        });*/
     }
 
     private final ClickListener<Boolean> pClickListener = new ClickListener<Boolean>() {
