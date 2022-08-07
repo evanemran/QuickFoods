@@ -3,6 +3,7 @@ package com.evanemran.quickfoods
 import android.Manifest.permission
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Resources.NotFoundException
 import android.graphics.Bitmap
@@ -51,6 +52,10 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
         textView_payChannel.setOnClickListener {
             val postDialog = PaymentOptionDialog(getPayChannelList(), selectedChannel ,paymentClickListener)
             postDialog.show(supportFragmentManager, "payment")
+        }
+
+        button_checkOut.setOnClickListener {
+            startActivity(Intent(this, OrderStatusActivity::class.java))
         }
 
         client = LocationServices.getFusedLocationProviderClient(this)

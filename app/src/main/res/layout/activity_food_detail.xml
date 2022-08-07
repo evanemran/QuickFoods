@@ -21,11 +21,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp">
+
                 <ImageView
-                    android:src="@drawable/meal"
-                    android:scaleType="centerCrop"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"/>
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/meal" />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"

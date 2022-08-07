@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.evanemran.quickfoods.FoodDetailActivity;
 import com.evanemran.quickfoods.R;
 import com.evanemran.quickfoods.adapters.FoodListAdapter;
+import com.evanemran.quickfoods.dialogs.FoodDetailBottomSheet;
 import com.evanemran.quickfoods.listeners.ClickListener;
 import com.evanemran.quickfoods.models.Foods;
 
@@ -44,7 +45,7 @@ public class FoodListFragment extends Fragment {
         List<Foods> foodsList = new ArrayList<>();
         foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
         foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
-        foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
+        foodsList.add(new Foods("Set meal 1", "A meal of rice, chicken, vegetables with soft drinks", 180, R.drawable.chemistry));
         foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
         foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
         foodsList.add(new Foods("Burger Combo", "A combo of Beef/Chicken Burger with Potato Wedges and Oreo Shake", 250, R.drawable.meal));
@@ -59,8 +60,15 @@ public class FoodListFragment extends Fragment {
     private final ClickListener<Foods> foodClickListener = new ClickListener<Foods>() {
         @Override
         public void onClicked(Foods data) {
-            startActivity(new Intent(getContext(), FoodDetailActivity.class)
-                    .putExtra("food", data));
+            if (data.getFoodName().equals("Set meal 1")){
+                FoodDetailBottomSheet bottomSheet = new FoodDetailBottomSheet();
+                bottomSheet.show(getChildFragmentManager(),
+                        "BottomSheet");
+            }
+            else{
+                startActivity(new Intent(getContext(), FoodDetailActivity.class)
+                        .putExtra("food", data));
+            }
         }
     };
 }
