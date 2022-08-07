@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.evanemran.quickfoods.adapters.SummaryAdapter
 import com.evanemran.quickfoods.dialogs.PaymentOptionDialog
 import com.evanemran.quickfoods.listeners.ClickListener
+import com.evanemran.quickfoods.models.Address
 import com.evanemran.quickfoods.models.Foods
 import com.evanemran.quickfoods.models.PaymentChannels
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -48,7 +49,12 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
 
         textView_deliveryAddress.setOnClickListener {
             if (isAddressAvailable){
+                val addresses: MutableList<Address> = mutableListOf()
+                addresses.add(Address(0, "12th Floor - 50, Bay Tower, Mohakhali", "Work", LatLng(27.435539, 95.392441), false))
+                addresses.add(Address(0, "17th Floor - Stark Tower, LA", "Home", LatLng(37.056519, -94.537453), true))
+                addresses.add(Address(0, "House 112/A, GK Road, Noida", "Love", LatLng(27.435539, 95.392441), false))
                 val listIntent = Intent(this, AddressListActivity::class.java)
+//                listIntent.putExtra("addresses", addresses)
                 startActivityForResult(listIntent, 101)
             }
             else{
