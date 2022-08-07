@@ -161,11 +161,13 @@
                         android:padding="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_summary"
-                        tools:listitem="@layout/list_summary"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/list_summary" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -255,6 +257,7 @@
             android:id="@+id/button_checkOut"
             android:layout_margin="16dp"
             android:text="Place order"
+            android:background="@drawable/rounded_button"
             android:textAllCaps="false"
             android:textSize="14sp"
             android:layout_width="match_parent"

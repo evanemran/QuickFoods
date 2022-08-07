@@ -92,6 +92,7 @@
             android:id="@+id/button_addToCart"
             android:layout_marginStart="8dp"
             android:text="Add to cart"
+            android:background="@drawable/rounded_button"
             android:backgroundTint="@color/accentColor"
             android:textColor="@color/white"
             android:textAllCaps="false"

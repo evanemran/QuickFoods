@@ -162,9 +162,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private val servicesClickListener: ClickListener<Service> = object : ClickListener<Service>{
         override fun onClicked(data: Service) {
-//            Toast.makeText(this@MainActivity, data.title, Toast.LENGTH_SHORT).show()
-            val permissionDialog = PermissionDialog(permissionListener)
-            permissionDialog.show(supportFragmentManager, "permission")
+            Toast.makeText(this@MainActivity, data.title, Toast.LENGTH_SHORT).show()
         }
 
     }

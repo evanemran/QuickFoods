@@ -81,6 +81,7 @@ class SignupActivity : AppCompatActivity() {
                 // we are storing in our string
                 // which we have already created.
                 verificationId = s
+                otp_container.visibility = View.VISIBLE
             }
 
             // this method is called when user

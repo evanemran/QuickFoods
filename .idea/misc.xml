@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/button_rounded.xml" value="0.2195" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/rounded_button.xml" value="0.2195" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/drawable/rounded_edittext.xml" value="0.2195" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_cart.xml" value="0.30416666666666664" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_checkout.xml" value="0.30416666666666664" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_food_detail.xml" value="0.30416666666666664" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/activity_signup.xml" value="0.30416666666666664" />
+        <entry key="..\:/Android_Projects/QuickFoods/app/src/main/res/layout/bottomsheet_food_detail.xml" value="0.30416666666666664" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_cart.xml" value="0.155" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_delivery.xml" value="0.155" />
         <entry key="..\:/SPA_DashBoard_New/QuickFoods/app/src/main/res/drawable/ic_love.xml" value="0.155" />
