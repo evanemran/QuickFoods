@@ -54,7 +54,7 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
                 addresses.add(Address(0, "17th Floor - Stark Tower, LA", "Home", LatLng(37.056519, -94.537453), true))
                 addresses.add(Address(0, "House 112/A, GK Road, Noida", "Love", LatLng(27.435539, 95.392441), false))
                 val listIntent = Intent(this, AddressListActivity::class.java)
-//                listIntent.putExtra("addresses", addresses)
+//                    .putExtra("addresses", addresses)
                 startActivityForResult(listIntent, 101)
             }
             else{

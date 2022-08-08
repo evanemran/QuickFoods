@@ -258,7 +258,7 @@
             android:layout_margin="16dp"
             android:text="Place order"
             android:background="@drawable/rounded_button"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

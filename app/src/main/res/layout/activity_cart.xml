@@ -225,7 +225,7 @@
             android:id="@+id/button_reviewAddress"
             android:layout_margin="16dp"
             android:text="Review payment and address"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:background="@drawable/rounded_button"
             android:textSize="14sp"
             android:layout_width="match_parent"
