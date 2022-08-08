@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"/>
     <RadioButton
         android:visibility="visible"
+        android:clickable="false"
         android:id="@+id/radioButton_address"
         android:foregroundTint="@color/accentColor"
         android:src="@drawable/ic_check"

@@ -18,40 +18,40 @@ import com.evanemran.quickfoods.models.PaymentChannels
 class AddressAdapter (val context: Context, val selectedAddress: Address,
                       val list: List<Address>, val listener: ClickListener<Address>)
     : RecyclerView.Adapter<AddressViewHolder>(){
-    private var selectedPos = 0
+    private var selectedPos = getSelectedPos()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddressViewHolder {
         val layout = LayoutInflater.from(context).inflate(R.layout.list_address, parent, false)
         return AddressViewHolder(layout)
     }
 
     override fun onBindViewHolder(holder: AddressViewHolder, position: Int) {
-        selectedPos = getSelectedPos()
         val item = list[holder.adapterPosition]
 
-//        holder.imageView_paySelected.visibility = (
-//            if (selectedPos == holder.adapterPosition) View.VISIBLE
-//            else View.GONE
-//        )
+
+        if (selectedPos == holder.adapterPosition){
+            holder.radioButton_address.isChecked = true
+        }
+        else holder.radioButton_address.isChecked = false
+
 
         holder.textView_address.setText(item.addressName)
 //        holder.imageView_payChannel.setImageResource(item.pIcon)
 
 
         holder.address_container.setOnClickListener {
-//            holder.imageView_paySelected.visibility = View.VISIBLE
-//            listener.onClicked(item)
-//            //                holder.textView_cat.setBackgroundColor(Color.parseColor("#4694E3"));
-//            notifyItemChanged(selectedPos)
-//            selectedPos = holder.adapterPosition
-//            notifyItemChanged(selectedPos)
+            holder.radioButton_address.isChecked = true
+            listener.onClicked(item)
+            notifyItemChanged(selectedPos)
+            selectedPos = holder.adapterPosition
+            notifyItemChanged(selectedPos)
         }
     }
 
     private fun getSelectedPos(): Int {
         list.forEachIndexed { index, element ->
-//            if (element.pName == selectedChannel.pName){
-//                selectedPos = index
-//            }
+            if (element.addressName == selectedAddress.addressName){
+                selectedPos = index
+            }
         }
 
         return selectedPos
