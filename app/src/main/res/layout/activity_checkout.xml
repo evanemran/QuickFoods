@@ -60,9 +60,11 @@
                         android:layout_marginEnd="8dp"
                         android:layout_height="120dp" />
                     <TextView
+                        android:id="@+id/textView_selectedAddress"
                         android:text="50, Bay Tower, 12th Floor"
                         android:textSize="16sp"
                         android:textStyle="bold"
+                        android:maxLines="2"
                         android:drawablePadding="8dp"
                         android:textColor="@color/black"
                         android:padding="8dp"

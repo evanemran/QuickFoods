@@ -37,6 +37,7 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
     private var client: FusedLocationProviderClient? = null
     private val MyMarker: Marker? = null
     private var selectedChannel: PaymentChannels? = null
+    private var selectedAddress: Address? = null
     var isAddressAvailable = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,15 +47,16 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
         requestPermission()
 
         selectedChannel = PaymentChannels(0, "Cash", R.drawable.ic_money)
+        selectedAddress = Address(0, "17th Floor - Stark Tower, LA", "Home", 37.056519, -94.537453, true)
 
         textView_deliveryAddress.setOnClickListener {
             if (isAddressAvailable){
                 val addresses: MutableList<Address> = mutableListOf()
-                addresses.add(Address(0, "12th Floor - 50, Bay Tower, Mohakhali", "Work", LatLng(27.435539, 95.392441), false))
-                addresses.add(Address(0, "17th Floor - Stark Tower, LA", "Home", LatLng(37.056519, -94.537453), true))
-                addresses.add(Address(0, "House 112/A, GK Road, Noida", "Love", LatLng(27.435539, 95.392441), false))
+                addresses.add(Address(0, "12th Floor - 50, Bay Tower, Mohakhali", "Work", 27.435539, 95.392441, false))
+                addresses.add(Address(0, "17th Floor - Stark Tower, LA", "Home", 37.056519, -94.537453, true))
+                addresses.add(Address(0, "House 112/A, GK Road, Noida", "Love", 27.435539, 95.392441, false))
                 val listIntent = Intent(this, AddressListActivity::class.java)
-//                    .putExtra("addresses", addresses)
+                    .putExtra("address", selectedAddress)
                 startActivityForResult(listIntent, 101)
             }
             else{
@@ -76,6 +78,28 @@ class CheckoutActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val mapFragment: SupportMapFragment = mini_map as SupportMapFragment
         mapFragment.getMapAsync(this)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 101){
+            if (resultCode == RESULT_OK){
+                selectedAddress = data?.getSerializableExtra("address") as Address
+                textView_selectedAddress.text = selectedAddress!!.addressName
+                val latLng: LatLng = LatLng(selectedAddress!!.lat, selectedAddress!!.lng)
+                map?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,16f))
+                val markerOptions = MarkerOptions()
+                markerOptions.position(latLng)
+                markerOptions.icon(
+                    bitmapDescriptorFromVector(
+                        this,
+                        R.drawable.ic_location_marker
+                    )
+                )
+                map!!.addMarker(markerOptions)
+            }
+        }
     }
 
     private fun getPayChannelList(): MutableList<PaymentChannels> {
