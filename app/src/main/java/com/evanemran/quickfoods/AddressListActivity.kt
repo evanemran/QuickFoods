@@ -22,6 +22,10 @@ class AddressListActivity : AppCompatActivity() {
         selectedAddress = intent.getSerializableExtra("address") as Address
 
         showAddresses()
+
+        button_addAddress.setOnClickListener {
+            startActivity(Intent(this, AddressAddActivity::class.java))
+        }
     }
 
     private fun showAddresses() {
